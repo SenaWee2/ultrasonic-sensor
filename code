@@ -1,4 +1,4 @@
-const int  trigpin = 13;
+const int  trigpin = 11;
 const int  echopin = 12;
 int buzzer = 10;
 
