@@ -3,7 +3,9 @@ const int  echopin = 12;
 int buzzer = 10;
 
 long duration;
-int distance;
+
+int distanceCm, distanceInch;
+
 
 void setup() {
   Serial.begin(9600);
@@ -20,13 +22,18 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(trigpin,LOW);
 
-  duration = pulseIn(echopin,HIGH);
-  distance = duration*0.034/2;
+ duration = pulseIn(echoPin, HIGH);
+distanceCm= duration*0.034/2;
+distanceInch = duration*0.0133/2;
 
 
-  Serial.print("distance");
-  Serial.println(distance);
- delay (200);
+  Serial.print("Distance: "); // Prints string "Distance" on the LCD
 
+Serial.print(" cm");
+delay(10);
+Serial.print("Distance: ");
+
+Serial.print(" inch");
+delay(10);
  
 }
